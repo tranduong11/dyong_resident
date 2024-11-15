@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
-    android:layout_width="match_parent"
-    android:background="#F2F2F2"
-    android:layout_height="match_parent">
+    tools:context=".SignupActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_login"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -19,7 +22,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nhận mọi thông báo hoá đơn, các tiện ích hỗ trợ \n trong quá trình thuê"
+        android:text="Tạo tài khoản và kết nối với nhà quản lý của bạn"
         android:textColor="#808080"
         android:textSize="15dp"
         />
@@ -34,7 +37,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Số điện thoại"
+            android:text="Họ và tên"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="#FF0004"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            />
+
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_custom"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
             android:textSize="14dp"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -88,23 +124,50 @@
         android:layout_height="40dp"
         android:background="@drawable/edittext_custom"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <LinearLayout
         android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:text="Quên mật khẩu?"
-        android:gravity="end"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập lại mật khẩu"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="#FF0004"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            />
+
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_custom"
         />
+
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:text="ĐĂNG NHẬP"
+        android:text="ĐĂNG KÝ"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:gravity="center"
+        android:textSize="17dp"
         android:background="@drawable/custom_button"
         />
 
@@ -118,13 +181,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bạn chưa có tài khoản?"
+            android:text="Bạn đã có tài khoản?"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đăng ký"
+            android:text="Đăng nhập"
             android:layout_marginLeft="2dp"
             android:textStyle="bold"
             />
