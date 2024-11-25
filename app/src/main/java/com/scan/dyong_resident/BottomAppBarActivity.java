@@ -32,18 +32,16 @@ public class BottomAppBarActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.action_profile) {
             }
 
-            // Thay thế fragment nếu có fragment được chọn
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, selectedFragment)
                         .commit();
             }
-            return true; // Trả về true để sự kiện được xử lý
+            return true;
         });
 
-        // Đặt mục mặc định là HomeFragment khi Activity được tạo lần đầu tiên
         if (savedInstanceState == null) {
-            bottomNavigationView.setSelectedItemId(R.id.action_home); // Đặt "Trang chủ" làm mục mặc định
+            bottomNavigationView.setSelectedItemId(R.id.action_home);
         }
     }
 }
