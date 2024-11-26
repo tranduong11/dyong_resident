@@ -3,5 +3,8 @@
     <string name="text_splash">Tinh hoa cuộc sống</string>
     <string name="txt_title_app">DYONG RESIDENT</string>
     <string name="txt_login">ĐĂNG NHẬP</string>
+    <string name="txt_signup">ĐĂNG KÝ</string>
     <string name="message_forget_otp">Dyong sẽ gửi mã OTP đến số điện thoại \n 03******10 của bạn. Hãy nhập mã OTP nhận\n được vào bên dưới.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
