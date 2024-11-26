@@ -55,6 +55,7 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/edtFullName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_custom"
@@ -88,6 +89,41 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/edtMail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_custom"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="#FF0004"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/edtPhone"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_custom"
@@ -120,6 +156,7 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/edtPass"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_custom"
@@ -152,6 +189,7 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/edtRePass"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_custom"
@@ -160,7 +198,7 @@
 
 
     <TextView
-        android:id="@+id/tvSigup"
+        android:id="@+id/tvSignup"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
