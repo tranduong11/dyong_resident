@@ -69,11 +69,7 @@
                     android:textSize="16sp"
                     android:textColor="#333333" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#888888" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -109,14 +105,8 @@
                     android:textSize="16sp"
                     android:textColor="#333333" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#888888" />
             </LinearLayout>
 
-            <!-- Ngôn ngữ -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,15 +129,10 @@
                     android:textSize="16sp"
                     android:textColor="#333333" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#888888" />
+
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Về chúng tôi -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -156,7 +141,6 @@
             android:layout_marginTop="8dp"
             android:padding="16dp">
 
-            <!-- Điều khoản sử dụng -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -181,7 +165,6 @@
 
             </LinearLayout>
 
-            <!-- Chính sách bảo mật -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -204,14 +187,9 @@
                     android:textSize="16sp"
                     android:textColor="#333333" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#888888" />
+
             </LinearLayout>
 
-            <!-- Hotline hỗ trợ -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -234,15 +212,10 @@
                     android:textSize="16sp"
                     android:textColor="#333333" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#888888" />
+
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Đăng xuất -->
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
