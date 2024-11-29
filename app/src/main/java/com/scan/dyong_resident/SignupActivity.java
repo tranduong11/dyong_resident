@@ -19,7 +19,7 @@ public class SignupActivity extends AppCompatActivity {
     TextView tvSignup, tvDN;
     EditText edtFullName, edtMail;
     private TextInputEditText passwordEditText, passwordEditText1;
-    private TextInputLayout passwordTextInputLayout, passwordTextInputLayout1;;
+    private TextInputLayout passwordTextInputLayout, passwordTextInputLayout1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,52 +73,6 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-//        edtPass.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if(s.length() == 0){
-//                    edtPass.setError("Vui lòng nhập mật khẩu");
-//                }
-//                else {
-//                    edtPass.setError(null);
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
-//
-//        edtRePass.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if(s.length() == 0){
-//                    edtRePass.setError("Vui lòng nhập lại mật khâu");
-//                }
-//                else {
-//                    edtRePass.setError(null);
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
-
-
-
         tvSignup.setOnClickListener(v -> {
             String fullName = edtFullName.getText().toString();
             String mail = edtMail.getText().toString();
@@ -163,7 +117,6 @@ public class SignupActivity extends AppCompatActivity {
                         passwordEditText1.setError(null);
                     }
                 }
-
 
             }
             else {
