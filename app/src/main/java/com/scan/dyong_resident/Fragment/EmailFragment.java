@@ -28,7 +28,7 @@ public class EmailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_email, container, false);
 
         // Thiết lập RecyclerView
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerViewContract);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Dữ liệu mẫu

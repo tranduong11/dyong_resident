@@ -68,7 +68,7 @@
         android:textColor="#000" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewContract"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/contract_list_title" />
@@ -78,7 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_bar"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
          />
 
 </RelativeLayout>
