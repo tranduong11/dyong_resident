@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.scan.dyong_resident.Fragment.AddContractFragment;
 import com.scan.dyong_resident.Fragment.BillFragment;
+import com.scan.dyong_resident.Fragment.ContractManagementFragment;
 import com.scan.dyong_resident.Fragment.HomeFragment;
 import com.scan.dyong_resident.Fragment.ProfileFragment;
 import com.scan.dyong_resident.Fragment.EmailFragment;
@@ -25,7 +26,7 @@ public class BottomAppBarActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.action_home) {
-                selectedFragment = new HomeFragment();
+                selectedFragment = new ContractManagementFragment();
             } else if (item.getItemId() == R.id.action_email) {
                 selectedFragment = new EmailFragment();
             } else if (item.getItemId() == R.id.action_add) {

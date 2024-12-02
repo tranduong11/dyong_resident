@@ -22,9 +22,9 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox cbSave;
     private TextInputEditText passwordEditText;
     private TextInputLayout passwordTextInputLayout;
-    private RoleHelper roleHelper; // RoleHelper để kiểm tra người dùng
-    private final String ADMIN_EMAIL = "admin@dyong.com"; // Email admin cứng
-    private final String ADMIN_PASSWORD = "admin123";    // Password admin cứng
+    private RoleHelper roleHelper;
+    private final String ADMIN_EMAIL = "admin@dyong.com";
+    private final String ADMIN_PASSWORD = "admin123";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_screen);
         init();
 
-        // Khởi tạo RoleHelper
         roleHelper = new RoleHelper(this);
 
-        // Kiểm tra thông tin đã lưu
         SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
         boolean isRemember = sharedPreferences.getBoolean("isRemember", false);
         if (isRemember) {
@@ -44,20 +42,17 @@ public class LoginActivity extends AppCompatActivity {
             cbSave.setChecked(isRemember);
         }
 
-        // Xử lý sự kiện đăng nhập
         tvLogin.setOnClickListener(v -> {
             String email = edtEmail.getText().toString();
             String password = passwordEditText.getText().toString();
 
             if (isValidEmail(email)) {
                 if (email.equals(ADMIN_EMAIL) && password.equals(ADMIN_PASSWORD)) {
-                    // Nếu là admin
                     Toast.makeText(this, "Đăng nhập admin thành công", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, BottomAppBarActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (roleHelper.isUserValid(email, password)) {
-                    // Nếu là người dùng
                     Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, BottomAppBarActivity.class);
                     startActivity(intent);
@@ -70,7 +65,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // Chuyển đến màn hình đăng ký
         tvDK.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
             startActivity(intent);

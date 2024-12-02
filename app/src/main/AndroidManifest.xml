@@ -18,9 +18,7 @@
         <activity
             android:name=".BottomAppBarActivity"
             android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".forgetOtpActicity"
             android:exported="false" />

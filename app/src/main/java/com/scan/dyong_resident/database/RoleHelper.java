@@ -21,7 +21,7 @@ public class RoleHelper extends SQLiteOpenHelper {
     private static final String COLUMN_FULL_NAME = "full_name";
     private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PASSWORD = "password";
-    private static final String COLUMN_ROLE = "role"; // "admin" hoặc "user"
+    private static final String COLUMN_ROLE = "role";
 
     public RoleHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -29,7 +29,6 @@ public class RoleHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Tạo bảng Users
         String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_FULL_NAME + " TEXT, "
@@ -38,7 +37,6 @@ public class RoleHelper extends SQLiteOpenHelper {
                 + COLUMN_ROLE + " TEXT)";
         db.execSQL(CREATE_TABLE_USERS);
 
-        // Thêm tài khoản admin mặc định
         addDefaultAdmin(db);
     }
 
@@ -46,14 +44,13 @@ public class RoleHelper extends SQLiteOpenHelper {
         ContentValues adminValues = new ContentValues();
         adminValues.put(COLUMN_FULL_NAME, "Admin");
         adminValues.put(COLUMN_EMAIL, "admin@dyong.com");
-        adminValues.put(COLUMN_PASSWORD, "admin123"); // Mật khẩu mặc định
+        adminValues.put(COLUMN_PASSWORD, "admin123");
         adminValues.put(COLUMN_ROLE, "admin");
         db.insert(TABLE_USERS, null, adminValues);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Xóa bảng cũ nếu tồn tại và tạo lại
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
         onCreate(db);
     }
