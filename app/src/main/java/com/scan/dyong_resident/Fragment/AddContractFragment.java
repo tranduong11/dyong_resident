@@ -80,7 +80,9 @@ public class AddContractFragment extends Fragment {
             return;
         }
 
+        // Tạo đối tượng Contract với id = -1 (id sẽ được gán tự động khi insert vào DB)
         Contract contract = new Contract(
+                -1, // id = -1, sẽ được tự động gán khi thêm vào DB
                 phong,
                 chuHopDong,
                 Integer.parseInt(soLuong),
@@ -96,6 +98,24 @@ public class AddContractFragment extends Fragment {
                 Double.parseDouble(mayGiat),
                 khac
         );
+
+
+//        Contract contract = new Contract(
+//                phong,
+//                chuHopDong,
+//                Integer.parseInt(soLuong),
+//                date,
+//                dateStart,
+//                dateEnd,
+//                Double.parseDouble(tienNha),
+//                Double.parseDouble(tienCoc),
+//                Double.parseDouble(internet),
+//                Double.parseDouble(nuocUong),
+//                Double.parseDouble(nuocUongTheoNguoi),
+//                Double.parseDouble(tienDien),
+//                Double.parseDouble(mayGiat),
+//                khac
+//        );
 
         boolean isInserted = contractHelper.addContract(contract);
 

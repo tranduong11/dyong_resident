@@ -14,9 +14,8 @@ import java.util.List;
 public class ContractHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "contracts.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
-    // Table and columns
     public static final String TABLE_CONTRACT = "contracts";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_PHONG = "phong";
@@ -63,9 +62,32 @@ public class ContractHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTRACT);
-        onCreate(db);
+        if (oldVersion < 2) {
+            Cursor cursor = db.rawQuery("PRAGMA table_info(" + TABLE_CONTRACT + ")", null);
+            boolean columnExists = false;
+
+            if (cursor != null && cursor.moveToFirst()) {
+                int columnNameIndex = cursor.getColumnIndex("name");
+                if (columnNameIndex != -1) {
+                    do {
+                        String columnName = cursor.getString(columnNameIndex);
+                        if (columnName.equals(COLUMN_NUOC_UONG)) {
+                            columnExists = true;
+                            break;
+                        }
+                    } while (cursor.moveToNext());
+                }
+                cursor.close();
+            }
+
+            if (!columnExists) {
+                db.execSQL("ALTER TABLE " + TABLE_CONTRACT + " ADD COLUMN " + COLUMN_NUOC_UONG + " REAL;");
+                db.execSQL("ALTER TABLE " + TABLE_CONTRACT + " ADD COLUMN " + COLUMN_NUOC_UONG_THEO_NGUOI + " REAL;");
+            }
+        }
     }
+
+
 
     public boolean addContract(Contract contract) {
         ContentValues values = new ContentValues();
@@ -101,6 +123,7 @@ public class ContractHelper extends SQLiteOpenHelper {
 
             if (cursor != null && cursor.moveToFirst()) {
                 do {
+                    int id = getIntFromCursor(cursor, COLUMN_ID);
                     String room = getStringFromCursor(cursor, COLUMN_PHONG);
                     String owner = getStringFromCursor(cursor, COLUMN_CHU_HOP_DONG);
                     int quantity = getIntFromCursor(cursor, COLUMN_SO_LUONG);
@@ -116,7 +139,7 @@ public class ContractHelper extends SQLiteOpenHelper {
                     double mayGiat = getDoubleFromCursor(cursor, COLUMN_MAY_GIAT);
                     String khac = getStringFromCursor(cursor, COLUMN_KHAC);
 
-                    contractList.add(new Contract(room, owner, quantity, ngayKy, ngayBatDau, ngayKetThuc,
+                    contractList.add(new Contract(id, room, owner, quantity, ngayKy, ngayBatDau, ngayKetThuc,
                             tienNha, tienCoc, internet, nuocUong, nuocUongTheoNguoi,
                             tienDien, mayGiat, khac));
                 } while (cursor.moveToNext());
@@ -129,18 +152,48 @@ public class ContractHelper extends SQLiteOpenHelper {
         return contractList;
     }
 
-    private String getStringFromCursor(Cursor cursor, String columnName) {
-        int columnIndex = cursor.getColumnIndex(columnName);
-        return columnIndex != -1 ? cursor.getString(columnIndex) : null;
+    public boolean updateContract(Contract contract) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PHONG, contract.getRoom());
+        values.put(COLUMN_CHU_HOP_DONG, contract.getOwner());
+        values.put(COLUMN_SO_LUONG, contract.getQuantity());
+        values.put(COLUMN_NGAY_KY, contract.getNgayKy());
+        values.put(COLUMN_NGAY_BAT_DAU, contract.getNgayBatDau());
+        values.put(COLUMN_NGAY_KET_THUC, contract.getNgayKetThuc());
+        values.put(COLUMN_TIEN_NHA, contract.getTienNha());
+        values.put(COLUMN_TIEN_COC, contract.getTienCoc());
+        values.put(COLUMN_INTERNET, contract.getInternet());
+        values.put(COLUMN_NUOC_UONG, contract.getNuocUong());
+        values.put(COLUMN_NUOC_UONG_THEO_NGUOI, contract.getNuocUongTheoNguoi());
+        values.put(COLUMN_TIEN_DIEN, contract.getTienDien());
+        values.put(COLUMN_MAY_GIAT, contract.getMayGiat());
+        values.put(COLUMN_KHAC, contract.getKhac());
+
+        int rowsAffected = db.update(TABLE_CONTRACT, values, COLUMN_ID + " = ?", new String[]{String.valueOf(contract.getId())});
+        db.close();
+
+        return rowsAffected > 0;
     }
 
     private int getIntFromCursor(Cursor cursor, String columnName) {
-        int columnIndex = cursor.getColumnIndex(columnName);
-        return columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
+        int index = cursor.getColumnIndex(columnName);
+        return (index != -1) ? cursor.getInt(index) : 0;
+    }
+
+    private String getStringFromCursor(Cursor cursor, String columnName) {
+        int index = cursor.getColumnIndex(columnName);
+        return (index != -1) ? cursor.getString(index) : "";
     }
 
     private double getDoubleFromCursor(Cursor cursor, String columnName) {
-        int columnIndex = cursor.getColumnIndex(columnName);
-        return columnIndex != -1 ? cursor.getDouble(columnIndex) : 0.0;
+        int index = cursor.getColumnIndex(columnName);
+        return (index != -1) ? cursor.getDouble(index) : 0.0;
+    }
+    public void deleteContract(Contract contract) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CONTRACT, COLUMN_ID + " = ?", new String[]{String.valueOf(contract.getId())});
+        db.close();
     }
 }
