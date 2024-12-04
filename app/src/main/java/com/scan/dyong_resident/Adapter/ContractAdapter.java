@@ -128,9 +128,12 @@ public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.Contra
         return contractList.size();
     }
 
+
+
     public interface OnContractActionListener {
         void onEditClick(Contract contract);
         void onDeleteClick(Contract contract);
+        void onContractClick(Contract contract);
     }
 
     public class ContractViewHolder extends RecyclerView.ViewHolder {
@@ -144,6 +147,10 @@ public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.Contra
             tvQuantity = itemView.findViewById(R.id.tv_quantity);
             ivEdit = itemView.findViewById(R.id.iv_edit);
             ivDelete = itemView.findViewById(R.id.iv_delete);
+
+            itemView.setOnClickListener(v -> {
+                listener.onContractClick(contractList.get(getAdapterPosition()));
+            });
         }
     }
 }

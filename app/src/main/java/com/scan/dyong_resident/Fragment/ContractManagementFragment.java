@@ -1,5 +1,6 @@
 package com.scan.dyong_resident.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.scan.dyong_resident.Adapter.ContractAdapter;
+import com.scan.dyong_resident.ContractDetail;
 import com.scan.dyong_resident.R;
 import com.scan.dyong_resident.database.ContractHelper;
 import com.scan.dyong_resident.models.Contract;
@@ -41,7 +43,7 @@ public class ContractManagementFragment extends Fragment implements ContractAdap
         recyclerView = view.findViewById(R.id.recyclerViewContract);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        contractHelper = new ContractHelper(getContext()); // Khởi tạo contractHelper đúng cách
+        contractHelper = new ContractHelper(getContext());
 
         contractList = contractHelper.getAllContracts();
 
@@ -54,7 +56,6 @@ public class ContractManagementFragment extends Fragment implements ContractAdap
 
     @Override
     public void onEditClick(Contract contract) {
-        // Hiển thị Dialog cập nhật thông tin hợp đồng
         showUpdateDialog(contract);
     }
 
@@ -98,7 +99,6 @@ public class ContractManagementFragment extends Fragment implements ContractAdap
                 .setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Lấy thông tin từ các EditText
                         String phong = edtPhong.getText().toString().trim();
                         String chuHopDong = edtChuHopDong.getText().toString().trim();
                         String soLuong = edtSoLuong.getText().toString().trim();
@@ -171,5 +171,12 @@ public class ContractManagementFragment extends Fragment implements ContractAdap
                     }
                 })
                 .show();
+    }
+
+    @Override
+    public void onContractClick(Contract contract) {
+        Intent intent = new Intent(getActivity(), ContractDetail.class);
+        intent.putExtra("contract_detail", contract);
+        startActivity(intent);
     }
 }
