@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#7fffd4"
+        android:background="#21D4B4"
         android:id="@+id/re_title"
         android:padding="10dp">
 
@@ -192,7 +192,6 @@
                     android:src="@drawable/ic_addd" />
             </LinearLayout>
 
-            <!-- Tạo hóa đơn button -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

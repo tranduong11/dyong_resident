@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F7F8FA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#21D4B4"
+        android:id="@+id/re_title"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tha tác nhanh"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/img1"
+        android:scaleType="centerCrop"
+        android:background="@drawable/custom_imagres"
+        android:contentDescription="Hình ảnh phòng"
+        android:layout_below="@id/re_title"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/title_Operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banner_image"
+        android:layout_marginTop="16dp"
+        android:text=" Trải nghiệm khách hàng là ưu tiên hàng đầu"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/content_Operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_Operation"
+        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
+        android:text="
+Là một admin, nhiệm vụ của bạn không chỉ đơn thuần là quản lý thông tin mà còn là cầu nối giúp khách hàng cảm nhận sự chuyên nghiệp và tận tâm. Hãy luôn lắng nghe ý kiến, giải đáp thắc mắc nhanh chóng và chủ động đưa ra giải pháp để khách hàng cảm thấy được trân trọng. Mỗi tương tác đều là cơ hội để xây dựng niềm tin, mang lại sự hài lòng và tạo ấn tượng tốt đẹp. Khi khách hàng hài lòng, bạn không chỉ hoàn thành nhiệm vụ mà còn góp phần khẳng định thương hiệu và giá trị của tổ chức."
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_bar"
+        android:layout_marginTop="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="10dp"
+        android:layout_below="@id/content_Operation">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo hợp đồng"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#21D4B4"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo hoá đơn"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="#21D4B4"/>
+    </LinearLayout>
+
+</RelativeLayout>
