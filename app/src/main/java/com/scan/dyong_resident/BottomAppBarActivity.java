@@ -9,7 +9,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.scan.dyong_resident.Fragment.AddContractFragment;
 import com.scan.dyong_resident.Fragment.BillFragment;
 import com.scan.dyong_resident.Fragment.ContractManagementFragment;
-import com.scan.dyong_resident.Fragment.HomeFragment;
 import com.scan.dyong_resident.Fragment.ProfileFragment;
 import com.scan.dyong_resident.Fragment.EmailFragment;
 
