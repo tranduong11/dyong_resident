@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EditText cho các thông tin hóa đơn -->
+    <EditText
+        android:id="@+id/edt_phong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phòng"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edt_chuHopDong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chủ Hợp Đồng"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edt_kyThanhToan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kỳ Thanh Toán"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edt_ngayLap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ngày Lập"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/edt_hanThanhToan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hạn Thanh Toán"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/edt_soLuong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số Lượng"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/edt_tienPhong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Phòng"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/edt_tienDien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Điện"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/edt_tienNuoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Nước"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/edt_tienMang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Mạng"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/edt_tienThangMay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Thang Máy"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/edt_tienRac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền Rác"
+        android:inputType="numberDecimal"/>
+
+</LinearLayout>

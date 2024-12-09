@@ -1,0 +1,93 @@
+<!-- res/layout/dialog_update_contract.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edt_phong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phòng" />
+
+    <EditText
+        android:id="@+id/edt_chuHopDong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chủ hợp đồng" />
+
+    <EditText
+        android:id="@+id/edt_soLuong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số lượng" />
+
+    <EditText
+        android:id="@+id/edt_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ngày ký" />
+
+    <EditText
+        android:id="@+id/edt_date_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ngày bắt đầu" />
+
+    <EditText
+        android:id="@+id/edt_date_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ngày kết thúc" />
+
+    <EditText
+        android:id="@+id/edt_tienNha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền nhà" />
+
+    <EditText
+        android:id="@+id/edt_tienCoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền cọc" />
+
+    <EditText
+        android:id="@+id/edt_Internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Internet" />
+
+    <EditText
+        android:id="@+id/edt_nuocUong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nước uống" />
+
+    <EditText
+        android:id="@+id/edt_nuocUongTheoNguoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nước uống theo người" />
+
+    <EditText
+        android:id="@+id/edt_tienDien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiền điện" />
+
+    <EditText
+        android:id="@+id/edt_mayGiat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Máy giặt" />
+
+    <EditText
+        android:id="@+id/edt_khac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Khác" />
+
+
+</LinearLayout>
