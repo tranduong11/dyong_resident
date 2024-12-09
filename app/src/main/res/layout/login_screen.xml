@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     android:layout_width="match_parent"
@@ -34,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Số điện thoại"
+            android:text="Tài khoản email"
             android:textSize="14dp"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -52,9 +53,11 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/edtMail"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
         android:background="@drawable/edittext_custom"
+        android:text="admin@dyong.com"
         />
 
     <LinearLayout
@@ -83,11 +86,38 @@
             />
 
     </LinearLayout>
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/edittext_custom"
-        />
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="false"
+        app:boxStrokeColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:text="admin123"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/edittext_custom"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <CheckBox
+        android:id="@+id/cbSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lưu tài khoản"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,6 +128,7 @@
         />
 
     <TextView
+        android:id="@+id/tvlogin"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
@@ -122,6 +153,7 @@
             />
 
         <TextView
+            android:id="@+id/tvDK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng ký"

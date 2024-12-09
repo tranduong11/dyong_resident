@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorChuaThanhToan">#FF0000</color>
+    <color name="colorDaThanhToan">#0000FF</color>
 </resources>

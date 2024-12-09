@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/re_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#7fffd4"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Thêm phản ánh"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="1. CHI TIẾT PHẢN ÁNH"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Tên phòng"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edt_tenPhong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/background_edittext"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Vị trí số tầng"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edt_viTriSoTang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_edittext"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Người tạo phản ánh"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edt_nguoiTao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_edittext"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Nội dung phản ánh"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edt_noiDungPhanAnh"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_edittext"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btn_themPhanAnh"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/custom_button"
+                android:gravity="center"
+                android:text="THÊM PHẢN ÁNH"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
